@@ -1,0 +1,37 @@
+# File types to ignore
+
+# Ignore cache files
+__pycache__/
+.cache/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore test output files
+test_output.txt
+
+# Ignore distribution files
+dist/
+build/
+*.egg-info/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore mypy cache
+.mypy_cache/
+
+# Ignore pylint reports
+pylint-report.txt
+pylint-global.txt
