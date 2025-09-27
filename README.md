@@ -58,15 +58,37 @@ This library provides sophisticated tools for numerical differentiation, essenti
 
 ### Prerequisites
 - Python 3.7 or higher
-- NumPy
+- Conda or pip
 
-### Setup
+### Recommended: Using Conda
 ```bash
-# Install NumPy if not already installed
-pip install numpy
+# Create and activate conda environment
+conda env create -f environment.yml
+conda activate derivatives
+```
 
-# Clone or download the library files
-# Import in your Python scripts
+### Alternative: Using pip
+```bash
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Manual Installation
+```bash
+# Minimum requirements
+pip install numpy>=1.20.0
+
+# For running tests (optional)
+pip install pytest>=6.0.0
+```
+
+### Environment Management
+```bash
+# To deactivate conda environment
+conda deactivate
+
+# To remove conda environment (if needed)
+conda env remove -n derivatives
 ```
 
 ## Quick Start
