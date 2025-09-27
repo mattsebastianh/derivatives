@@ -39,10 +39,8 @@ def generate_second_derivatives(funcs):
     """
     second_derivatives = []
     for func in funcs:
-        def second_derivative(x, eps=1e-7, f=func):
-            def second_derivative(x, eps=1e-7):
-                return (f(x+eps) - 2*f(x) + f(x-eps)) / eps**2
-            return second_derivative
+        def second_derivative(x, eps=1e-5, f=func):  # Capture func in default parameter, larger eps for stability
+            return (f(x+eps) - 2*f(x) + f(x-eps)) / eps**2
         second_derivatives.append(second_derivative)
     return second_derivatives
 
@@ -62,9 +60,8 @@ def generate_third_derivatives(funcs):
     """
     third_derivatives = []
     for func in funcs:
-        def third_derivative(x, eps=1e-7, f=func):
-            def third_derivative(x, eps=1e-7):
-                return (f(x+eps) - 3*f(x) + 3*f(x-eps) - f(x-2*eps)) / eps**3
-            return third_derivative
+        def third_derivative(x, eps=1e-4, f=func):  # Capture func in default parameter, larger eps for stability
+            # Using forward difference formula for third derivative
+            return (f(x+3*eps) - 3*f(x+2*eps) + 3*f(x+eps) - f(x)) / eps**3
         third_derivatives.append(third_derivative)
     return third_derivatives
